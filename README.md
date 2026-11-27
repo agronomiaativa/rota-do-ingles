@@ -106,7 +106,7 @@ O checkout recebe todos os `utm_*`, `fbclid`, `src` e `sck` da URL de entrada e,
 | `ViewContent` | A oferta aparece na tela (`content_name`, `value`, `currency`) |
 | `InitiateCheckout` | Clique na compra (`value`, `currency`, `level`, `variant`) |
 
-- O Pixel só carrega depois do "Aceitar". O que aconteceu antes fica na fila e é enviado nesse momento; se a pessoa recusar, a fila é apagada.
+- Com `CONSENT_BANNER: false` (configuração atual), não há aviso de cookies e o Pixel carrega direto. Com `true`, ele só carrega depois do "Aceitar": o que aconteceu antes fica na fila e é enviado nesse momento; se a pessoa recusar, a fila é apagada.
 - Os mesmos eventos vão para `window.dataLayer` sempre, porque ele só existe dentro da página. Se instalar o GTM, dispare as tags **apenas** depois do evento `CookieConsent` com `consent = "aceito"`.
 - O nome não vai para o Pixel: a coleta automática está desligada no código. No Gerenciador de Eventos, deixe também a **Correspondência avançada automática** desligada, porque ela pode ler campos de formulário.
 - Se o checkout usar o mesmo Pixel, ele também pode disparar `InitiateCheckout`. Desative um dos dois para não contar em dobro.
