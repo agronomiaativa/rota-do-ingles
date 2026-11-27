@@ -18,7 +18,7 @@ export const config: QuizConfig = {
   /** true = envia o primeiro nome para o checkout (?name=...), para o campo já vir preenchido. */
   CHECKOUT_PASS_NAME: true,
   /** true = mostra o aviso de cookies e só liga o Pixel depois do "Aceitar". */
-  CONSENT_BANNER: true,
+  CONSENT_BANNER: false,
 
   marca: {
     nome: 'Rota do Inglês',
@@ -504,8 +504,8 @@ export const config: QuizConfig = {
         {
           titulo: 'Cookies e medição',
           paragrafos: [
-            'Se você aceitar, usamos o Pixel da Meta para medir o desempenho dos anúncios, com eventos como início do teste, nível obtido e clique no botão de compra. Se você recusar, o Pixel não é carregado.',
-            'Você pode mudar sua escolha no link "Cookies", no rodapé da página.',
+            'Usamos o Pixel da Meta para medir o desempenho dos anúncios, com eventos como início do teste, nível obtido e clique no botão de compra. O seu nome e as suas respostas não são enviados ao Pixel.',
+            'Você pode bloquear ou apagar cookies a qualquer momento nas configurações do seu navegador.',
           ],
         },
         {
